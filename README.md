@@ -43,6 +43,14 @@ so it lives once in `freebuff-core`.
 
 ## Install
 
+Published to npm, as `@beta`:
+
+| Package | |
+|---|---|
+| [`freebuff-core`](https://www.npmjs.com/package/freebuff-core) | protocol core, inlined inside both packages — not installed separately |
+| [`magpie-freebuff-provider`](https://www.npmjs.com/package/magpie-freebuff-provider) | magpie / OpenCode |
+| [`dsh-freebuff-provider`](https://www.npmjs.com/package/dsh-freebuff-provider) | DeepSeek Harness |
+
 ### magpie
 
 ```sh

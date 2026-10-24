@@ -6,42 +6,78 @@ out, and streaming tool calls.
 
 Unofficial. Not affiliated with Codebuff or Freebuff.
 
-## Packages
+## Install
 
-| Package | Install into | Size |
-|---|---|---|
-| `freebuff-core` | — (dependency of both shells) | 90.9 KB |
-| `magpie-freebuff-provider` | magpie / OpenCode | 64.7 KB |
-| `dsh-freebuff-provider` | DeepSeek Harness | 12.2 KB |
+Published to npm as `@beta`, and attached below as tarballs.
 
-## Install from these assets
-
-Download the tarballs below, then:
-
-**magpie**
+### From npm
 
 ```sh
-magpie plugin add ./magpie-freebuff-provider-0.3.0-beta.1.tgz
+# magpie / OpenCode
+magpie plugin add magpie-freebuff-provider@beta
 magpie plugin login freebuff
 ```
 
-`freebuff-core` must be installed alongside it. Either let npm resolve it:
-
 ```sh
-npm install ./freebuff-core-0.3.0-beta.1.tgz ./magpie-freebuff-provider-0.3.0-beta.1.tgz
-```
-
-or install from npm once published (`magpie plugin add magpie-freebuff-provider`).
-
-**DeepSeek Harness**
-
-```sh
-dsh plugin --profile desktop add ./dsh-freebuff-provider-0.3.0-beta.1.tgz
+# DeepSeek Harness
+dsh plugin --profile desktop add dsh-freebuff-provider@beta
 npx freebuff-gateway
 ```
 
-Then point a provider at `http://127.0.0.1:8937/v1` — see the README for the
-`cordis.patch.yml` block, or generate it:
+`freebuff-core` is the shared protocol layer. It is **inlined inside both
+packages**, so you do not install it separately — see "Why core is inlined".
+
+### From the tarballs below
+
+Same packages, for when npm is unreachable:
+
+```sh
+# magpie
+magpie plugin add ./magpie-freebuff-provider-0.3.0-beta.1.tgz
+
+# DSH
+dsh plugin --profile desktop add ./dsh-freebuff-provider-0.3.0-beta.1.tgz
+```
+
+Verify them first:
+
+```sh
+sha256sum -c SHA256SUMS.txt
+```
+
+### From source
+
+```sh
+git clone https://github.com/MYCF711/freebuff-auth
+cd freebuff-auth && npm install && npm test
+```
+
+## Point DSH at the gateway
+
+```yaml
+# ~/.dsh/profiles/<name>/cordis.patch.yml
+- id: llm-pi-ai
+  name: "@deepseek-ai/dsh-llm-pi-ai"
+  config:
+    providers:
+      freebuff:
+        displayName: Freebuff
+        apiKeyEnv: FREEBUFF_LOCAL_KEY
+        api: openai-completions
+        baseURL: http://127.0.0.1:8937/v1
+        models:
+          - id: freebuff/solar-pro4
+            name: Solar Pro 4 · 0fb
+            contextWindow: 1048576
+            maxTokens: 32768
+            input: [text, image]
+```
+
+```sh
+export FREEBUFF_LOCAL_KEY=local-freebuff
+```
+
+Or generate the block:
 
 ```js
 import { patchEntry } from 'dsh-freebuff-provider'
@@ -92,11 +128,24 @@ into each.
 through both looks like two machines — one of the patterns that gets an account
 flagged.
 
+## Why core is inlined
+
+`magpie-freebuff-provider` and `dsh-freebuff-provider` each carry a copy of
+`freebuff-core` under their own `core/` directory rather than depending on it.
+
+Reason: magpie's `plugin add` installs a tarball **without resolving its
+dependencies**. A package that imports `freebuff-core` at load time fails with
+`exports no OpenCode plugin function` when core is absent. Inlining costs about
+30 KB of duplication and buys a single self-contained tarball.
+
+`packages/core` in the repo stays the single source; `scripts/inline-core.mjs`
+copies it in before packing.
+
 ## Not yet verified on a live account
 
-The tool-calling path is complete and covered by 38 assertions (26 in-repo, 12
-after installing the tarballs into a scratch directory), and the wire format was
-checked against Freebuff's own client — its `openai-compatible` adapter emits
+The tool-calling path is implemented and covered by 38 assertions (26 in-repo,
+12 after installing the tarballs into a scratch directory), and the wire format
+was checked against Freebuff's own client — its `openai-compatible` adapter emits
 `role:"tool"` with an underscore `tool_call_id`, exactly what this writes.
 
 What has **not** been exercised is a real end-to-end tool call against a live
@@ -109,6 +158,11 @@ tool calling as implemented-and-tested-in-isolation rather than proven.
 scripts/test.mjs            26 assertions   workspace
 scripts/test-installed.mjs  12 assertions   after tgz install
 scripts/verify-final.mjs    12 assertions   final
+```
+
+```sh
+npm test
+node scripts/verify-final.mjs
 ```
 
 ## License
