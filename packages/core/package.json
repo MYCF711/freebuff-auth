@@ -1,6 +1,6 @@
 {
   "name": "freebuff-core",
-  "version": "0.2.0",
+  "version": "0.3.0-beta.1",
   "description": "Freebuff protocol core: device signing, catalog, session admission, SSE tool-call parsing and message normalization. Shared by the magpie plugin and the DSH gateway — not meant to be installed directly.",
   "type": "module",
   "main": "./index.mjs",
@@ -23,7 +23,13 @@
     "device.mjs",
     "icon/*.png"
   ],
-  "keywords": ["freebuff", "codebuff", "opencode", "magpie", "dsh"],
+  "keywords": [
+    "freebuff",
+    "codebuff",
+    "opencode",
+    "magpie",
+    "dsh"
+  ],
   "license": "MIT",
   "author": "Freebuff provider plugin contributors",
   "repository": {

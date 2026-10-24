@@ -16,8 +16,8 @@ Write-Host "`n=== 2. 推送 ===" -ForegroundColor Cyan
 git push -u origin main
 
 Write-Host "`n=== 3. 打 tag ===" -ForegroundColor Cyan
-git tag -a v0.2.0 -m "v0.2.0 - Freebuff provider for magpie and DeepSeek Harness"
-git push origin v0.2.0
+git tag -a v0.3.0-beta.1 -m "v0.3.0-beta.1 - Freebuff provider for magpie and DeepSeek Harness"
+git push origin v0.3.0-beta.1
 
 Write-Host "`n=== 完成 ===" -ForegroundColor Green
 Write-Host "仓库: https://github.com/MYCF711/freebuff-auth"

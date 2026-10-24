@@ -1,10 +1,12 @@
 {
   "name": "freebuff-auth",
-  "version": "0.2.0",
+  "version": "0.3.0-beta.1",
   "private": true,
   "description": "Freebuff provider for magpie and DeepSeek Harness — device signing, multi-account pool, streaming tool calls",
   "type": "module",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "test": "node scripts/test.mjs",
     "pack:magpie": "npm pack --workspace magpie-freebuff-provider --pack-destination dist",
@@ -13,7 +15,13 @@
     "pack:core": "npm pack --workspace freebuff-core --pack-destination dist",
     "gateway": "node packages/dsh/gateway.mjs"
   },
-  "keywords": ["freebuff", "codebuff", "magpie", "dsh", "opencode"],
+  "keywords": [
+    "freebuff",
+    "codebuff",
+    "magpie",
+    "dsh",
+    "opencode"
+  ],
   "license": "MIT",
   "author": "Freebuff provider plugin contributors",
   "repository": {

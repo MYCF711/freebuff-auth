@@ -1,6 +1,6 @@
 {
   "name": "magpie-freebuff-provider",
-  "version": "0.2.0",
+  "version": "0.3.0-beta.1",
   "description": "Freebuff in OpenCode and magpie: its free models through the account's own browser sign-in, a multi-account pool that rotates when a daily quota runs out, and streaming tool calls.",
   "type": "module",
   "main": "./index.mjs",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/MYCF711/freebuff-auth/tree/main/packages/magpie#readme",
   "dependencies": {
-    "freebuff-core": "0.2.0"
+    "freebuff-core": "0.3.0-beta.1"
   },
   "magpie": {
     "maxConcurrency": 1,

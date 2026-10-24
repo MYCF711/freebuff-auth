@@ -11,6 +11,12 @@ freebucks a day.
 
 Unofficial. Not affiliated with Codebuff or Freebuff.
 
+> **Status: beta (`0.3.0-beta.1`).** The tool-calling path is implemented and
+> covered by 38 assertions, and its wire format was checked against Freebuff's
+> own client — but it has **not** been exercised end to end against a live
+> Freebuff account (the one available during development is suspended).
+> Install with `@beta`; the stable tag is held until that test runs.
+
 ---
 
 ## The three packages
@@ -40,7 +46,7 @@ so it lives once in `freebuff-core`.
 ### magpie
 
 ```sh
-magpie plugin add magpie-freebuff-provider
+magpie plugin add magpie-freebuff-provider@beta
 magpie plugin login freebuff
 ```
 
@@ -48,13 +54,13 @@ Or from a packed tarball:
 
 ```sh
 npm pack --workspace magpie-freebuff-provider --pack-destination dist
-magpie plugin add ./dist/magpie-freebuff-provider-0.2.0.tgz
+magpie plugin add ./dist/magpie-freebuff-provider-0.3.0-beta.1.tgz
 ```
 
 ### DeepSeek Harness
 
 ```sh
-dsh plugin --profile desktop add dsh-freebuff-provider
+dsh plugin --profile desktop add dsh-freebuff-provider@beta
 ```
 
 The package ships a gateway binary. Start it:

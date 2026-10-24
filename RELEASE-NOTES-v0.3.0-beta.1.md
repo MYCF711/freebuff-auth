@@ -1,4 +1,4 @@
-# v0.2.0 — Freebuff for magpie and DeepSeek Harness
+# v0.3.0-beta.1 — Freebuff for magpie and DeepSeek Harness
 
 Freebuff's free models in magpie and DeepSeek Harness, through the account's own
 browser sign-in — with a multi-account pool that rotates when a daily quota runs
@@ -21,14 +21,14 @@ Download the tarballs below, then:
 **magpie**
 
 ```sh
-magpie plugin add ./magpie-freebuff-provider-0.2.0.tgz
+magpie plugin add ./magpie-freebuff-provider-0.3.0-beta.1.tgz
 magpie plugin login freebuff
 ```
 
 `freebuff-core` must be installed alongside it. Either let npm resolve it:
 
 ```sh
-npm install ./freebuff-core-0.2.0.tgz ./magpie-freebuff-provider-0.2.0.tgz
+npm install ./freebuff-core-0.3.0-beta.1.tgz ./magpie-freebuff-provider-0.3.0-beta.1.tgz
 ```
 
 or install from npm once published (`magpie plugin add magpie-freebuff-provider`).
@@ -36,7 +36,7 @@ or install from npm once published (`magpie plugin add magpie-freebuff-provider`
 **DeepSeek Harness**
 
 ```sh
-dsh plugin --profile desktop add ./dsh-freebuff-provider-0.2.0.tgz
+dsh plugin --profile desktop add ./dsh-freebuff-provider-0.3.0-beta.1.tgz
 npx freebuff-gateway
 ```
 
