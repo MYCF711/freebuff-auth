@@ -20,7 +20,7 @@
 //
 // 本插件负责把这一段接起来，用户只需要在 DSH 里选模型。
 
-import { FreebuffError, DEFAULT_HOST } from 'freebuff-core'
+import { FreebuffError, DEFAULT_HOST } from './core/index.mjs'
 
 const PROVIDER = 'freebuff'
 const DEFAULT_PORT = 8937

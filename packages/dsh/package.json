@@ -15,7 +15,8 @@
     "index.mjs",
     "gateway.mjs",
     "bin/gateway.mjs",
-    "README.md"
+    "README.md",
+    "core/**"
   ],
   "keywords": [
     "dsh",
@@ -38,9 +39,6 @@
     "url": "https://github.com/MYCF711/freebuff-auth/issues"
   },
   "homepage": "https://github.com/MYCF711/freebuff-auth/tree/main/packages/dsh#readme",
-  "dependencies": {
-    "freebuff-core": "0.3.0-beta.1"
-  },
   "publishConfig": {
     "access": "public"
   }

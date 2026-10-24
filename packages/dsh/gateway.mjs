@@ -35,7 +35,7 @@ import {
   serializeMessages,
   buildNonStreamResponse,
   writeSSEResponse,
-} from 'freebuff-core'
+} from './core/index.mjs'
 
 const PORT = Number(process.env.GATEWAY_PORT ?? 8937)
 const HOST = '127.0.0.1'

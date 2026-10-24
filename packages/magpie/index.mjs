@@ -9,17 +9,17 @@
 //   详见 billing.mjs 的注释。
 
 import { startLogin, waitForLogin, AUTH_HOST, API_HOST } from "./login.mjs"
-import { generateDeviceKey, scopeOf } from "freebuff-core"
-import { createClient, FreebuffError, DEFAULT_HOST } from "freebuff-core"
-import { createPool, collectAccounts, pickTarget, slug, accountFromAuth } from "freebuff-core"
-import { resetAtOf, decide, sessionInfoOf, DAILY_FREEBUCKS, HOURS_PER_FREEBUCKS, SESSION_WINDOW_MS } from "freebuff-core"
-import { waitReady, markCall } from "freebuff-core"
+import { generateDeviceKey, scopeOf } from "./core/index.mjs"
+import { createClient, FreebuffError, DEFAULT_HOST } from "./core/index.mjs"
+import { createPool, collectAccounts, pickTarget, slug, accountFromAuth } from "./core/index.mjs"
+import { resetAtOf, decide, sessionInfoOf, DAILY_FREEBUCKS, HOURS_PER_FREEBUCKS, SESSION_WINDOW_MS } from "./core/index.mjs"
+import { waitReady, markCall } from "./core/index.mjs"
 import {
   parseFreebuffSSE,
   serializeMessages,
   normalizeToolArguments,
   hasUsableToolName,
-} from "freebuff-core"
+} from "./core/index.mjs"
 
 /** 小时数显示：整数就不带小数点，否则保留一位。 */
 function fmtHours(h) {
