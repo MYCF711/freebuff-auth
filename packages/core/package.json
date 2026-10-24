@@ -1,0 +1,37 @@
+{
+  "name": "freebuff-core",
+  "version": "0.2.0",
+  "description": "Freebuff protocol core: device signing, catalog, session admission, SSE tool-call parsing and message normalization. Shared by the magpie plugin and the DSH gateway — not meant to be installed directly.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./tool-calling": "./tool-calling.mjs",
+    "./freebuff": "./freebuff.mjs",
+    "./pool": "./pool.mjs",
+    "./billing": "./billing.mjs",
+    "./cooldown": "./cooldown.mjs",
+    "./device": "./device.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "tool-calling.mjs",
+    "freebuff.mjs",
+    "pool.mjs",
+    "billing.mjs",
+    "cooldown.mjs",
+    "device.mjs",
+    "icon/*.png"
+  ],
+  "keywords": ["freebuff", "codebuff", "opencode", "magpie", "dsh"],
+  "license": "MIT",
+  "author": "Freebuff provider plugin contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MYCF711/freebuff-auth.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

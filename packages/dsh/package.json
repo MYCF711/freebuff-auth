@@ -1,0 +1,47 @@
+{
+  "name": "dsh-freebuff-provider",
+  "version": "0.2.0",
+  "description": "Freebuff in DeepSeek Harness: a local OpenAI-compatible endpoint that serves Freebuff's free models with a multi-account pool and streaming tool calls.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./gateway": "./gateway.mjs"
+  },
+  "bin": {
+    "freebuff-gateway": "./bin/gateway.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "gateway.mjs",
+    "bin/gateway.mjs",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "opencode",
+    "magpie",
+    "freebuff",
+    "codebuff",
+    "coding-agent"
+  ],
+  "license": "MIT",
+  "author": "Freebuff provider plugin contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MYCF711/freebuff-auth.git",
+    "directory": "packages/dsh"
+  },
+  "bugs": {
+    "url": "https://github.com/MYCF711/freebuff-auth/issues"
+  },
+  "homepage": "https://github.com/MYCF711/freebuff-auth/tree/main/packages/dsh#readme",
+  "dependencies": {
+    "freebuff-core": "0.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

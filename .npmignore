@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.tgz
+*.log
+scripts/
+fix-*.mjs
+rename-*.mjs
+命名方案.md

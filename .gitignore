@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tgz
+*.log
+.DS_Store
+Thumbs.db
+
+# 凭据与抓包，绝不入库
+credentials.json
+device-key.json
+capture*.jsonl
+*.local.json
