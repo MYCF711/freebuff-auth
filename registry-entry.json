@@ -1,0 +1,12 @@
+{
+  "package": "magpie-freebuff-provider",
+  "name": "Freebuff",
+  "providers": [
+    "freebuff"
+  ],
+  "community": true,
+  "summary": {
+    "en": "Freebuff's free models, through the account's own browser sign-in: a 5-freebuck-per-hour session, a 25-freebuck daily cap, a multi-account pool that rotates when one runs out, and streaming tool calls.",
+    "zh": "用 Freebuff 账号自己的浏览器登录使用其免费模型：每小时 5 freebucks 的会话、每日 25 freebucks 上限、多账号池在额度耗尽时自动轮换，支持流式工具调用。"
+  }
+}
