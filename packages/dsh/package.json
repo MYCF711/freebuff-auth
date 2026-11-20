@@ -1,6 +1,6 @@
 {
   "name": "dsh-freebuff-provider",
-  "version": "0.3.0-beta.1",
+  "version": "0.3.3-beta.1",
   "description": "Freebuff in DeepSeek Harness: a local OpenAI-compatible endpoint that serves Freebuff's free models with a multi-account pool and streaming tool calls.",
   "type": "module",
   "main": "./index.mjs",
@@ -16,7 +16,8 @@
     "gateway.mjs",
     "bin/gateway.mjs",
     "README.md",
-    "core/**"
+    "core/**",
+    "baseline/**"
   ],
   "keywords": [
     "dsh",
